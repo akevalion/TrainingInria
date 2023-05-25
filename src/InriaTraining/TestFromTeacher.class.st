@@ -5,6 +5,12 @@ Class {
 }
 
 { #category : #tests }
+TestFromTeacher >> average: list [
+	list ifEmpty: [ ^ self ].
+	^ list sum / list size
+]
+
+{ #category : #tests }
 TestFromTeacher >> factorial: input [
 	^ input factorial
 ]
@@ -12,6 +18,39 @@ TestFromTeacher >> factorial: input [
 { #category : #tests }
 TestFromTeacher >> meaning [
 	^ 42
+]
+
+{ #category : #tests }
+TestFromTeacher >> testAverageEmpty [
+	| result value |
+	value := #().
+	result := self average: value.
+	self assert: result equals: self
+	
+]
+
+{ #category : #tests }
+TestFromTeacher >> testAverageList [
+	| result value |
+	value := #(1 2 3 4 5).
+	result := self average: value.
+	self assert: result equals: 3
+	
+]
+
+{ #category : #tests }
+TestFromTeacher >> testAverageListNumbers [
+	| result value |
+	value := {
+	#(1 2 3 4 5). 3.
+	#(-1 -2 -3 -4 -5). -3
+	}.
+	value pairsDo: [ :input :output |
+		result := self average: input.
+		self assert: result equals: output
+		 ].
+	
+	
 ]
 
 { #category : #tests }
