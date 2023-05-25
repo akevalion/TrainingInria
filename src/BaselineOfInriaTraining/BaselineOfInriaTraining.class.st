@@ -9,6 +9,5 @@ BaselineOfInriaTraining >> baseline: spec [
 	spec for: #common do: [
 		spec package: 'InriaTraining'.
 		spec group: 'default' with: #('InriaTraining')
-			
 	]
 ]
