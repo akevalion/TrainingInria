@@ -7,7 +7,12 @@ class Wallet:
         return self._balance
 
     def credit(self, amount: float) -> None:
+        self.checkAmount(amount)
         self._balance += amount
+
+    def checkAmount(self, amount: float) -> None:
+        if amount < 0:
+            raise NegativeAmountError () 
 
     def debit(self, amount: float) -> None:
         if amount > self._balance:
@@ -15,4 +20,7 @@ class Wallet:
         self._balance -= amount
 
 class NotEnoughMoney(Exception):
+    pass
+
+class NegativeAmountError(Exception):
     pass
