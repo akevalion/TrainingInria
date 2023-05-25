@@ -6,7 +6,7 @@ Class {
 
 { #category : #tests }
 TestFromTeacher >> factorial: input [
-	^ input factorial 
+	^ input factorial
 ]
 
 { #category : #tests }

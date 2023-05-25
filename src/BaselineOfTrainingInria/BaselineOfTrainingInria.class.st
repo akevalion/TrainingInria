@@ -1,14 +1,13 @@
 Class {
-	#name : #BaselineOfInriaTraining,
+	#name : #BaselineOfTrainingInria,
 	#superclass : #BaselineOf,
-	#category : #BaselineOfInriaTraining
+	#category : #BaselineOfTrainingInria
 }
 
 { #category : #baselines }
-BaselineOfInriaTraining >> baseline: spec [
+BaselineOfTrainingInria >> baseline: spec [
 	spec for: #common do: [
 		spec package: 'InriaTraining'.
 		spec group: 'default' with: #('InriaTraining')
-			
 	]
 ]
